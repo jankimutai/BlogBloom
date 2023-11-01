@@ -2,6 +2,7 @@ from flask_restful import Resource
 from config import app,api
 from models import db,BlogPost,Author,User
 from flask import make_response,jsonify
+
 class Home(Resource):
    def get(self):
         response = make_response(jsonify({"message":"Welcome to BlogBloom API"}),200)
@@ -9,17 +10,32 @@ class Home(Resource):
 api.add_resource(Home,"/")
 class BlogPostResource(Resource):
     def get(self):
-        blogs = BlogPost.query.all()
-        blog_dictionary = [{
-            "id":blog.id,
-            "title":blog.title,
-            "content":blog.content,
-            "image_url":blog.image_url,
-            "category":blog.category
-        }for blog in blogs]
-        response =  make_response(jsonify(blog_dictionary),200)
-        return response
+        blog_posts = BlogPost.query.all()
+        posts_data = [
+            {
+                'id': post.id,
+                'title': post.title,
+                'created_at': post.created_at,
+                'content': post.content,
+                "image_url":post.image_url
+            }
+            for post in blog_posts
+        ]
+        return jsonify(posts_data)
 api.add_resource(BlogPostResource,"/blogs")
+
+class BlogPostResourceById(Resource):
+    def get(self, id):
+        post = BlogPost.query.filter_by(id=id).first()
+        posts_data = {
+            'id': post.id,
+            'title': post.title,
+            'created_at': post.created_at,
+            'content': post.content,
+            "image_url":post.image_url
+        }
+        return jsonify(posts_data)
+api.add_resource(BlogPostResourceById,"/blogs/<int:id>")
 class AuthorsResource(Resource):
     def get(self):
         authors = Author.query.all()
