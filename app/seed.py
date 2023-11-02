@@ -6,7 +6,7 @@ from config import app
 from faker import Faker
 fake =Faker()
 with app.app_context():
-    BlogPost.query.delete()
+    # BlogPost.query.delete()
     Author.query.delete()
     User.query.delete()
     print("Seeding blogs")
@@ -38,28 +38,28 @@ with app.app_context():
         "https://img.freepik.com/free-photo/toy-bricks-table_144627-48267.jpg?size=626&ext=jpg"
 
     ]
-    for _ in range(50):
+    for _ in range(12):
         blog = BlogPost(title =fake.sentence(),content=fake.text(),author_id=randint(1,40),category=choice(category),image_url = choice(image_urls))
         db.session.add(blog)
     db.session.commit()
     print("Done Seeding Blogs")
-    roles = [
-        "Writter",
-        "Editor",
-        "Publisher"
-        "Contributor",
-        "Administrator"
-    ]
-    print("Seeding Authors")
-    for _ in range(40):
-        author = Author(username= fake.name(),email=fake.email(),role =fake.job())
-        db.session.add(author)
-    db.session.commit()
-    print("Done Seeding Authors")
+    # roles = [
+    #     "Writter",
+    #     "Editor",
+    #     "Publisher"
+    #     "Contributor",
+    #     "Administrator"
+    # ]
+    # print("Seeding Authors")
+    # for _ in range(40):
+    #     author = Author(username= fake.name(),email=fake.email(),role =fake.job())
+    #     db.session.add(author)
+    # db.session.commit()
+    # print("Done Seeding Authors")
 
-    print("Seeding users")
-    for _ in range(40):
-        user = User(username =fake.name(),email=fake.email(),password =fake.password())
-        db.session.add(user)
-    db.session.commit()
-    print("Done Seeding Users")
+    # print("Seeding users")
+    # for _ in range(40):
+    #     user = User(username =fake.name(),email=fake.email(),password =fake.password())
+    #     db.session.add(user)
+    # db.session.commit()
+    # print("Done Seeding Users")
