@@ -18,13 +18,17 @@ function BlogDetails() {
   return (
     <div>
         <Link to="/" className="back-link"> Back to All Blogs</Link>
-        <h1>Blog Posts</h1>
-        <div key={selectedBlog.id}>
+        <div key={selectedBlog.id} className="blog_data1">
+          <h2 style={{ color: 'white', fontSize: '20pt' }}>{selectedBlog.title}</h2>
+          <div className="blog_content1">
             <img className="blog_image" src={selectedBlog.image_url} />
-            <h2>{selectedBlog.title}</h2>
-            <p>{selectedBlog.created_at}</p>
-            <p>{selectedBlog.content}</p>
-        </div>
+            <div className="blog_text1">
+              <p>{selectedBlog.created_at}</p>
+              <p>{selectedBlog.content}</p>
+            </div>
+         </div>
+</div>
+
     </div>
   );
 }
