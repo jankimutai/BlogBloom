@@ -1,9 +1,16 @@
 * {
   margin: 2px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 14pt;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15pt;
 }
-
+.logo { 
+  width: 100px;
+  height: min-content;
+  background-repeat: no-repeat;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+}
 .navbar {
   background-color: #007BFF;
   color: #fff;
@@ -28,8 +35,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #000;
-  color: #fff
+  background-color:#374045;
+  color: white
 }
 
 .navbar a {
@@ -41,7 +48,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #FFD700; /* Change the color on hover */
+  color: #FFD700;
 }
 
 .navbar .left {
@@ -51,8 +58,6 @@ body {
 .navbar .right {
   margin-right: 20px;
 }
-
-/* Custom CSS for registration form container */
 .registration-form-container {
   width: 100%;
   max-width: 400px;
@@ -95,7 +100,6 @@ body {
 }
 
 .submit-button {
-  width: 70%;
   padding: 10px;
   background-color: #007bff;
   color: #fff;
@@ -109,7 +113,6 @@ body {
   background-color: #0056b3;
 }
 
-/* Custom CSS for login container */
 .login-container {
   width: 100%;
   max-width: 400px;
@@ -152,7 +155,6 @@ body {
 }
 
 .login-button {
-  width: 85%;
   padding: 10px;
   background-color: #007bff;
   color: #fff;
@@ -179,7 +181,7 @@ body {
 }
 
 .blog-list {
-  width: 70%;
+  width: 98%;
   margin: 0 auto; 
   padding: 20px;
   background-color: #007BFF;
@@ -210,19 +212,32 @@ body {
   color: #333
 }
 .blog_image {
+<<<<<<< HEAD
+  border: 2px solid #333; 
+  transition: transform 0.2s, box-shadow 0.2s;
+=======
   border: 2px solid #333; /* Add a border */
   transition: transform 0.2s, box-shadow 0.2s; /* Add a smooth transition on hover */
+>>>>>>> Development
   width: 400px;
   height: 400px;
   border-radius: 3%;
   object-fit: cover;
+<<<<<<< HEAD
+=======
   /* Add a subtle box shadow */
+>>>>>>> Development
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .blog_image:hover {
+<<<<<<< HEAD
+  transform: scale(1.05); 
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4); 
+=======
   transform: scale(1.05); /* Scale up the image on hover */
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4); /* Increase the box shadow on hover */
+>>>>>>> Development
 }
 
 
@@ -263,10 +278,64 @@ body {
 .blog-creation-button:hover {
   background-color: #0056b3;
 }
-
 .about-content {
-  text-align: center;
+  font-family: Arial, sans-serif;
+  color: rgb(255, 255, 255)5f5;
+  line-height: 1.6;
 }
+<<<<<<< HEAD
+
+.about-content h2 {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #0074d9; 
+}
+
+.about-content ol {
+  list-style-type: decimal;
+  padding-left: 20px;
+}
+
+.about-content li {
+  margin-bottom: 10px;
+}
+
+.about-content strong {
+  font-weight: bold;
+  color: #f44336; 
+}
+
+p{
+  margin: 10px 0;
+}
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0074d9; 
+  color: white; 
+}
+button.edit-button {
+  background-color: #4caf50;
+  color: white;
+}
+button.delete-button {
+  background-color: #f44336; 
+  color: white; 
+}
+
+.back-link {
+  text-decoration: none;
+  color: #0074d9; 
+  font-weight: bold;
+  margin-right: 20px;
+}
+
+=======
 .blog_content1 {
   display: flex;
   flex-direction: row;
@@ -283,6 +352,7 @@ body {
 p{
   margin: 10px 0;
 }
+>>>>>>> Development
 
 
 
