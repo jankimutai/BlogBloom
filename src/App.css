@@ -34,7 +34,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-
+  background-color: #000;
+  color: #fff
 }
 
 .navbar a {
@@ -210,19 +211,32 @@ body {
   color: #333
 }
 .blog_image {
+<<<<<<< HEAD
+  border: 2px solid #333; 
+  transition: transform 0.2s, box-shadow 0.2s;
+=======
   border: 2px solid #333; /* Add a border */
   transition: transform 0.2s, box-shadow 0.2s; /* Add a smooth transition on hover */
+>>>>>>> Development
   width: 400px;
   height: 400px;
   border-radius: 3%;
   object-fit: cover;
+<<<<<<< HEAD
+=======
   /* Add a subtle box shadow */
+>>>>>>> Development
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .blog_image:hover {
+<<<<<<< HEAD
+  transform: scale(1.05); 
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4); 
+=======
   transform: scale(1.05); /* Scale up the image on hover */
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4); /* Increase the box shadow on hover */
+>>>>>>> Development
 }
 
 
@@ -264,9 +278,7 @@ body {
   background-color: #0056b3;
 }
 .about-content {
-  font-family: Arial, sans-serif;
-  color: rgb(255, 255, 255)5f5;
-  line-height: 1.6;
+  text-align: center;
 }
 .blog_content1 {
   display: flex;
@@ -283,50 +295,6 @@ body {
 }
 p{
   margin: 10px 0;
-}
-.about-section {
-  background-color: #f9f9f9; 
-  padding: 20px;
-}
-
-.about-section h2 {
-  font-size: 24px; 
-  color: #333 
-}
-
-.about-section p { 
-  color: #333; 
-  margin-bottom: 20px;
-}
-
-.what-we-offer {
-  margin-top: 20px; 
-}
-
-.what-we-offer li { 
-  color: #333; 
-  margin-bottom: 10px;
-}
-
-.what-we-offer li strong {
-  font-weight: bold;
-}
-
-.our-mission {
-  margin-top: 20px; 
-}
-
-.our-mission p { 
-  color: #333; 
-  margin-bottom: 20px; 
-}
-.get-started {
-  margin-top: 20px;
-}
-
-.get-started p { 
-  color: #333; 
-  margin-bottom: 20px; 
 }
 
 

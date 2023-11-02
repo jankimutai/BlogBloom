@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";import { useNavigate } from "react-router-dom";
 function BlogDetails() {
+  const navigate = useNavigate()
   const navigate = useNavigate()
   const { id } = useParams();
   const [selectedBlog, setSelectedBlog] = useState(null);
@@ -27,6 +28,7 @@ function BlogDetails() {
   }
   return (
     <div>
+
         
         <div key={selectedBlog.id} className="blog-item">
         <h2 className="blog-title">{selectedBlog.title}</h2>
@@ -45,6 +47,7 @@ function BlogDetails() {
         </div>
         
       </div>
+
 
     </div>
   );
