@@ -27,6 +27,7 @@ function BlogDetails() {
   }
   return (
     <div>
+<<<<<<< HEAD
         
         <div key={selectedBlog.id} className="blog-item">
         <h2 className="blog-title">{selectedBlog.title}</h2>
@@ -45,6 +46,19 @@ function BlogDetails() {
         </div>
         
       </div>
+=======
+        <Link to="/" className="back-link"> Back to All Blogs</Link>
+        <div key={selectedBlog.id} className="blog_data1">
+          <h2 style={{ color: 'white', fontSize: '20pt' }}>{selectedBlog.title}</h2>
+          <div className="blog_content1">
+            <img className="blog_image" src={selectedBlog.image_url} />
+            <div className="blog_text1">
+              <p>{selectedBlog.created_at}</p>
+              <p>{selectedBlog.content}</p>
+            </div>
+         </div>
+</div>
+>>>>>>> Development
 
     </div>
   );
