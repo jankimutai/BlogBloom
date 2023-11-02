@@ -5,6 +5,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="left">
         <ul>
+          <li><Link to="/" className="back-link">Back</Link></li>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
         </ul>
