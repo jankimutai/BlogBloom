@@ -3,6 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <div className="about">
+      <div className="about-content">
       <h2>About Us</h2>
       <p>
         Welcome to our blog! We are passionate writers who love to share our thoughts and insights with you.
@@ -13,6 +14,7 @@ const About = () => {
       <p>
         If you have any questions or would like to get in touch with us, feel free to contact us at info@example.com.
       </p>
+      </div>
     </div>
   );
 };
