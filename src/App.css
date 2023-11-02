@@ -25,7 +25,6 @@
   padding: 0;
   margin: 0;
 }
-
 .navbar li {
   display: inline;
   margin-right: 20px;
@@ -35,8 +34,8 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color:#374045;
-  color: white
+  background-color: #000;
+  color: #fff
 }
 
 .navbar a {
@@ -279,63 +278,8 @@ body {
   background-color: #0056b3;
 }
 .about-content {
-  font-family: Arial, sans-serif;
-  color: rgb(255, 255, 255)5f5;
-  line-height: 1.6;
+  text-align: center;
 }
-<<<<<<< HEAD
-
-.about-content h2 {
-  font-size: 24px;
-  margin-top: 20px;
-  color: #0074d9; 
-}
-
-.about-content ol {
-  list-style-type: decimal;
-  padding-left: 20px;
-}
-
-.about-content li {
-  margin-bottom: 10px;
-}
-
-.about-content strong {
-  font-weight: bold;
-  color: #f44336; 
-}
-
-p{
-  margin: 10px 0;
-}
-button {
-  padding: 8px 12px;
-  margin: 5px;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0074d9; 
-  color: white; 
-}
-button.edit-button {
-  background-color: #4caf50;
-  color: white;
-}
-button.delete-button {
-  background-color: #f44336; 
-  color: white; 
-}
-
-.back-link {
-  text-decoration: none;
-  color: #0074d9; 
-  font-weight: bold;
-  margin-right: 20px;
-}
-
-=======
 .blog_content1 {
   display: flex;
   flex-direction: row;
@@ -352,7 +296,6 @@ button.delete-button {
 p{
   margin: 10px 0;
 }
->>>>>>> Development
 
 
 
