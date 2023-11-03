@@ -40,7 +40,7 @@ function NewPost(){
           <h2 className="blog-creation-title">Create a New Blog</h2>
           {message && <p className="message">{message}</p>}
           <div>
-            <label className="blog-creation-label">Title:</label>
+            <label className="blog-creation-label">Title:</label><br></br>
             <input
               type="text"
               value={title}

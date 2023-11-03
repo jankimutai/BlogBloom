@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function BlogDetails() {
-  const navigate = useNavigate()
   const navigate = useNavigate()
   const { id } = useParams();
   const [selectedBlog, setSelectedBlog] = useState(null);
@@ -28,8 +27,6 @@ function BlogDetails() {
   }
   return (
     <div>
-
-        
         <div key={selectedBlog.id} className="blog-item">
         <h2 className="blog-title">{selectedBlog.title}</h2>
         <div>
@@ -38,16 +35,16 @@ function BlogDetails() {
           <button className="delete-button" onClick={handleDelete}>Delete</button>
         </div>
         <div className="blog_content1">
-        {selectedBlog.image_url ? (<img className="blog_image" src={selectedBlog.image_url} alt="Blog Image" />) : null}
+        {selectedBlog.image_url ? (<img className="blog_image" src={selectedBlog.image_url} alt={selectedBlog.id} />) : null}
             <div className="blog_text1">
               <p className="blog-date">{selectedBlog.created_at}</p>
               <p className="blog-content">{selectedBlog.content}</p>
+              <h6>{selectedBlog.category}</h6>
             </div>
             
         </div>
         
       </div>
-
 
     </div>
   );
