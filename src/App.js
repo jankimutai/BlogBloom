@@ -12,12 +12,12 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        <Route exact path="/"element={<Home />}/>
+        <Route exact path="/"element={<Login />}/>
         <Route path="/blogs/:id" element={<BlogDetails />} />
         <Route path="/about"element={<About />}/>
-        <Route path="/login"element={<Login />}/>
+        <Route path="/blogs"element={<Home />}/>
         <Route path="/registration"element={<Registration />}/>
-        <Route path='/new' element={<NewPost />} />
+        <Route path='/newblog' element={<NewPost />} />
       </Routes>
     </>
   )

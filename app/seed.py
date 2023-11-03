@@ -1,4 +1,4 @@
-from models import db,BlogPost,User,Author
+from models import db,BlogPost,User
 from random import randint,choice
 from config import app
 
@@ -7,8 +7,6 @@ from faker import Faker
 fake =Faker()
 with app.app_context():
     # BlogPost.query.delete()
-    Author.query.delete()
-    User.query.delete()
     print("Seeding blogs")
     category =[
         "Food blogs",
@@ -39,7 +37,7 @@ with app.app_context():
 
     ]
     for _ in range(12):
-        blog = BlogPost(title =fake.sentence(),content=fake.text(),author_id=randint(1,40),category=choice(category),image_url = choice(image_urls))
+        blog = BlogPost(title =fake.sentence(),content=fake.text(),user_id=randint(1,40),category=choice(category),image_url = choice(image_urls))
         db.session.add(blog)
     db.session.commit()
     print("Done Seeding Blogs")

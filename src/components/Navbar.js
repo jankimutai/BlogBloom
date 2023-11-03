@@ -8,12 +8,12 @@ const Navbar = () => {
       <div className="left">
         <ul>
           <li>
-            <Link to="/" className="back-link">
+            <Link to="/blogs" className="back-link">
               <FontAwesomeIcon icon={faArrowLeft} />
             </Link>
           </li>
           <li>
-            <Link to="/">
+            <Link to="/blogs">
               <FontAwesomeIcon icon={faHome} /> Home
             </Link>
           </li>
@@ -30,15 +30,16 @@ const Navbar = () => {
       <div className="right">
           <ul>
           <li>
-            <Link to="/new">
+            <Link to="/newblog">
               <FontAwesomeIcon icon={faPlusCircle} /> Add New Blog
             </Link>
           </li>
           <li>
-            <Link to="/login">
+            <Link to="/">
               <FontAwesomeIcon icon={faSignInAlt} /> Login
             </Link>
           </li>
+          
           <li>
             <Link to="/registration">
               <FontAwesomeIcon icon={faUserPlus} /> Register

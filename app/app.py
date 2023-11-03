@@ -1,6 +1,6 @@
 from flask_restful import Resource
-from config import app,api
-from models import db,BlogPost,Author,User
+from config import app,api,bcrypt
+from models import db,BlogPost,User
 from flask import make_response,jsonify,request
 from random import randint
 class Home(Resource):
@@ -32,7 +32,7 @@ class BlogPostResource(Resource):
 
         if not title or not content or not category:
             return {'error': 'Title, content, and category are required fields'}, 400
-        blog = BlogPost(title=title,content=content,category=category,image_url=image_url,author_id=randint(1,10))
+        blog = BlogPost(title=title,content=content,category=category,image_url=image_url,user_id=randint(1,10))
         if blog:
             db.session.add(blog)
             db.session.commit()
@@ -61,32 +61,33 @@ class BlogPostResourceById(Resource):
             return make_response(jsonify({'message': 'Blog post deleted successfully'}),204)
         return make_response(jsonify({"error": "Blog post not found"}, 404))
 api.add_resource(BlogPostResourceById,"/blogs/<int:id>")
-
-# class AuthorsResource(Resource):
-#     def get(self):
-#         authors = Author.query.all()
-#         authors_dict = [{
-#             "id":author.id,
-#             "username":author.username,
-#             "email":author.email,
-#             "role":author.role
-#         }for author in authors]
-#         response = make_response(jsonify(authors_dict),200)
-#         return response
-# api.add_resource(AuthorsResource,"/authors")
-# class UsersResource(Resource):
-#     def get(self):
-#         users= User.query.all()
-#         user_dict =[{
-#             "id":user.id,
-#             "username":user.username,
-#             "email":user.email,
-#             "password":user.password
-#         }for user in users]
-#         response = make_response(jsonify(user_dict),200)
-#         return response
-# api.add_resource(UsersResource,"/users")
-
-        
+class RegistrationResource(Resource):
+    def post(self):
+        data = request.get_json()
+        username = data["username"]
+        email=data["email"]
+        password = data["password"]
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        if not username or not email or not password:
+            return jsonify({"message": "All fields must be filled"}), 400
+        user_exists = User.query.filter(User.username == username).first() is not None
+        if user_exists:
+            return jsonify({"error":"User already exists"})
+        user = User(username=username,email=email,_password_hash=hashed_password)
+        db.session.add(user)
+        db.session.commit()
+        response = make_response(jsonify({"message":"Registration successful"}),201)
+        return response
+api.add_resource(RegistrationResource,"/registration")
+class LoginResource(Resource):
+    def post(self):
+        data = request.get_json()
+        email = data["email"]
+        password = data["password"]
+        user = User.query.filter(User.email == email).first()
+        if user and user.authenticate(password):
+            return make_response(jsonify({"message": "Login successful"}),201)
+        return make_response(jsonify({"error":"Incorrect password"}),401)
+api.add_resource(LoginResource,"/login")
 if __name__ == "__main__":
     app.run(debug=True,port=5555)

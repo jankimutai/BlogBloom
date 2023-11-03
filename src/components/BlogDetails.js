@@ -22,7 +22,7 @@ function BlogDetails() {
       .then((response) => {
         if (response.status === 204) {
           alert(`${selectedBlog.title} deleted`)
-          navigate("/")
+          navigate("/blogs")
         }})
   }
   return (
