@@ -1,12 +1,33 @@
-from flask_sqlalchemy import SQLAlchemy
-db=SQLAlchemy()
+from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy_serializer import SerializerMixin
+from sqlalchemy.orm import validates
+from config import db, bcrypt
 from datetime import datetime
-class User(db.Model):
-    __tablename__ ="users_table"
+class User(db.Model, SerializerMixin):
+    __tablename__ = 'users'
+
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email=db.Column(db.String(80),unique=True)
-    password = db.Column(db.String(120), nullable=False)
+    username = db.Column(db.String, unique=True, nullable=False)
+    email = db.Column(db.String(),unique =True,nullable=False)
+    _password_hash = db.Column(db.String,nullable=False)
+    image_url = db.Column(db.String())
+    bio = db.Column(db.String())
+    #relationship
+    blogs = db.relationship('BlogPost',backref= 'user')
+
+    def __repr__(self):
+        return f'<The current user id {self.username}>'
+
+    @hybrid_property
+    def password_hash(self):
+        raise AttributeError("Password Hash Cannot Be Viewed")
+    @password_hash.setter
+    def password_hash(self,password):
+        password_hash = bcrypt.generate_password_hash(password.encode('utf-8'))
+        self._password_hash = password_hash.decode('utf-8')
+    def authenticate(self,password):
+        return bcrypt.check_password_hash(self._password_hash,password.encode('utf-8'))
+    
 
 class BlogPost(db.Model):
     __tablename__ ="blogs_table"
@@ -16,16 +37,8 @@ class BlogPost(db.Model):
     updated_at = db.Column(db.DateTime,onupdate=datetime.now(),default=datetime.now())
     published_on =db.Column(db.DateTime,default=datetime.now())
     content = db.Column(db.Text, nullable=False)
-    author_id = db.Column(db.Integer, db.ForeignKey('authors_table.id'), nullable=False)
     image_url =db.Column(db.String())
     category =db.Column(db.String())
-
-class Author(db.Model):
-    __tablename__ ="authors_table"
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    email=db.Column(db.String(80),unique=True)
-    role=db.Column(db.String())
     #relationship
-    blogs= db.relationship('BlogPost',backref="authors")
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
