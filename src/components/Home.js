@@ -21,6 +21,7 @@ function Home(){
           {blogPosts.map((post) => (
             <div key={post.id} className="blog-item">
               <h2 className="blog-title">{post.title}</h2>
+              <h4>{post.category}</h4>
               <p className="blog-date">{post.created_at}</p>
               <p className="blog-content">{post.content}</p>
               <button onClick={()=> readMore(post.id)}>Read More</button>

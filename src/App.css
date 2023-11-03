@@ -1,7 +1,7 @@
 * {
   margin: 2px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 15pt;
+  font-size: 16pt;
 }
 .logo { 
   width: 100px;
@@ -58,7 +58,7 @@ body {
 .navbar .right {
   margin-right: 20px;
 }
-.registration-form-container {
+.registration-form-container{
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
@@ -69,6 +69,7 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   text-align: center;
   margin-top: 50px;
+  color: black;
 }
 
 .form-title {
@@ -124,6 +125,7 @@ body {
   background-color: rgba(255, 255, 255, 0.9);
   text-align: center;
   margin-top: 50px;
+  color:black
 }
 
 .login-title {
@@ -195,6 +197,7 @@ body {
   border-radius: 7px;
   padding: 10px;
   margin-bottom: 15px;
+  color: black;
 }
 
 .blog-title {
@@ -228,10 +231,17 @@ body {
 
 
 .blog-creation-container {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   max-width: 400px;
   margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  margin-top: 50px;
+  color:#000000
 }
 
 .blog-creation-title {
@@ -245,49 +255,23 @@ body {
 
 .blog-creation-input,
 .blog-creation-textarea {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  width: 80%;
+  padding: 13px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px;
 }
 .blog-creation-button {
+  padding: 10px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 5px;
-  padding: 10px 20px;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .blog-creation-button:hover {
   background-color: #0056b3;
-}
-.about-content {
-  font-family: Arial, sans-serif;
-  color: rgb(255, 255, 255)5f5;
-  line-height: 1.6;
-}
-
-.about-content h2 {
-  font-size: 24px;
-  margin-top: 20px;
-  color: #0074d9; 
-}
-
-.about-content ol {
-  list-style-type: decimal;
-  padding-left: 20px;
-}
-
-.about-content li {
-  margin-bottom: 10px;
-}
-
-.about-content strong {
-  font-weight: bold;
-  color: #f44336; 
 }
 
 p{
