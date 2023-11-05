@@ -31,7 +31,7 @@ function BlogDetails() {
         <h2 className="blog-title">{selectedBlog.title}</h2>
         <div>
           
-          <button className="edit-button">Edit</button>
+          <button className="edit-button"onClick={() => navigate(`/blogs/${id}/edit`)}>Edit</button>
           <button className="delete-button" onClick={handleDelete}>Delete</button>
         </div>
         <div className="blog_content1">

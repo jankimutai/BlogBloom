@@ -63,6 +63,7 @@ function NewPost(){
               value={content}
               onChange={(e) => setContent(e.target.value)}
               className="blog-creation-textarea"
+              rows={4}
             />
           </div>
           

@@ -10,19 +10,27 @@ class Home(Resource):
 api.add_resource(Home,"/")
 class BlogPostResource(Resource):
     def get(self):
-        blog_posts = BlogPost.query.all()
-        posts_data = [
-            {
-                'id': post.id,
-                'title': post.title,
-                'created_at': post.created_at,
-                "category ": post.category,
-                'content': post.content,
-                "image_url":post.image_url
-            }
-            for post in blog_posts
-        ]
-        return jsonify(posts_data)
+        page = request.args.get('page', type=int, default=1)
+        per_page = request.args.get('per_page', type=int, default=10)
+         # Calculate the offset based on the page and per_page values
+        offset = (page - 1) * per_page
+        blog_posts = BlogPost.query.order_by(BlogPost.created_at.desc()).offset(offset).limit(per_page).all()
+        if blog_posts:
+            posts_data = [
+                {
+                    'id': post.id,
+                    'title': post.title,
+                    'created_at': post.created_at,
+                    "category ": post.category,
+                    'content': post.content,
+                    "image_url":post.image_url
+                }
+                for post in blog_posts
+            ]
+            return jsonify(posts_data)
+        else:
+            return jsonify({"message": "No blog posts found"})
+
     def post(self):
         data = request.get_json()
         title = data["title"]
@@ -40,6 +48,10 @@ class BlogPostResource(Resource):
         else:
             return make_response(jsonify({'error':'Failed to save the blog post to the database'}, 500))          
 api.add_resource(BlogPostResource,"/blogs")
+@app.route('/total_posts', methods=['GET'])
+def get_total_posts():
+    total = BlogPost.query.count()
+    return jsonify({"total": total})
 
 class BlogPostResourceById(Resource):
     def get(self, id):
@@ -53,6 +65,26 @@ class BlogPostResourceById(Resource):
             "image_url":post.image_url
         }
         return jsonify(posts_data)
+    def put(self, id):
+        post = BlogPost.query.filter_by(id=id).first()
+        
+        if not post:
+            return jsonify({"message": "Blog post not found"}), 404
+
+        data = request.get_json()
+        
+        if 'title' in data:
+            post.title = data['title']
+        if 'category' in data:
+            post.category = data['category']
+        if 'content' in data:
+            post.content = data['content']
+        if 'image_url' in data:
+            post.image_url = data['image_url']
+
+        db.session.commit()
+
+        return jsonify({"message": "Blog post updated successfully"})
     def delete(self,id):
         post = BlogPost.query.filter_by(id=id).first()
         if post is not None:

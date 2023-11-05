@@ -6,7 +6,8 @@ from config import app
 from faker import Faker
 fake =Faker()
 with app.app_context():
-    # BlogPost.query.delete()
+    BlogPost.query.delete()
+    db.session.commit()
     print("Seeding blogs")
     category =[
         "Food blogs",
@@ -36,11 +37,11 @@ with app.app_context():
         "https://img.freepik.com/free-photo/toy-bricks-table_144627-48267.jpg?size=626&ext=jpg"
 
     ]
-    for _ in range(12):
+    for _ in range(11):
         blog = BlogPost(title =fake.sentence(),content=fake.text(),user_id=randint(1,40),category=choice(category),image_url = choice(image_urls))
         db.session.add(blog)
     db.session.commit()
-    print("Done Seeding Blogs")
+    # print("Done Seeding Blogs")
     # roles = [
     #     "Writter",
     #     "Editor",

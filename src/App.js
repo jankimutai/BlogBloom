@@ -6,12 +6,14 @@ import About from "./components/About";
 import Login from "./components/Login";
 import Registration from "./components/Registration"
 import BlogDetails from './components/BlogDetails';
-import NewPost from './NewPost';
+import NewPost from './components/NewPost';
+import EditBlogPost from './components/EditBlog';
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
+        <Route path='/blogs/:id/edit' element={<EditBlogPost />} />
         <Route exact path="/"element={<Login />}/>
         <Route path="/blogs/:id" element={<BlogDetails />} />
         <Route path="/about"element={<About />}/>
