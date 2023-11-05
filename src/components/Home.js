@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 function Home({blogPosts,handlePageChange,page,totalPages}) {
   const navigate = useNavigate();
+
   function readMore(postId) {
     navigate(`/blogs/${postId}`);
   }
