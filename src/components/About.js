@@ -2,15 +2,15 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="blog-list">
-      <div className="blog-item">
+    <div className="about-container">
+      <div className="about-section">
         <h2 className="blog-title">About BlogBloom</h2>
         <p>
           Welcome to BlogBloom, your go-to destination for discovering and sharing captivating blog posts! Our platform is designed to connect bloggers, writers, and readers in a vibrant community that celebrates the art of storytelling.
         </p>
       </div>
-      <div className="blog-item">
-        <h2 className="blog-title">What We Offer</h2>
+      <div className="about-section">
+        <h2>What We Offer</h2>
         <ol>
           <li>
             <strong>Diverse Blogging Topics:</strong> BlogBloom covers a wide range of topics, from travel and lifestyle to technology and arts. You'll find blogs that pique your interest and inspire your creativity.
@@ -32,14 +32,14 @@ const About = () => {
           </li>
         </ol>
       </div>
-      <div className="blog-item">
-        <h2 className="blog-title">Our Mission</h2>
+      <div>
+        <h2>Our Mission</h2>
         <p>
           At BlogBloom, our mission is to foster a vibrant and inclusive blogging community. We strive to empower bloggers to share their stories, ideas, and passions with a global audience. We believe that everyone has a unique voice, and through blogging, we can connect, learn, and grow together.
         </p>
       </div>
-      <div className="blog-item">
-        <h2 className="blog-title">Get Started</h2>
+      <div className="about-section">
+        <h2>Get Started</h2>
         <p>
           Join BlogBloom today and start your journey into the world of blogging. Whether you're a seasoned blogger or a newcomer, you'll find a welcoming community ready to embrace your ideas and stories.
           <br />
