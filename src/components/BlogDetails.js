@@ -39,9 +39,11 @@ function BlogDetails() {
             <div className="blog_text1">
               <p className="blog-date">{selectedBlog.created_at}</p>
               <p className="blog-content">{selectedBlog.content}</p>
-              <h6>{selectedBlog.category}</h6>
             </div>
-            
+        </div>
+        <div>
+          <button className="edit-button"onClick={() => navigate(`/blogs/${id}/edit`)}>Edit</button>
+          <button className="delete-button" onClick={handleDelete}>Delete</button>
         </div>
         
       </div>
