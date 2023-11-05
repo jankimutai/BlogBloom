@@ -1,26 +1,8 @@
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Home({blogPosts,handlePageChange,page,totalPages}) {
   const navigate = useNavigate();
-  const [blogPosts, setBlogPosts] = useState([]);
-  const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(12);
-  const [totalPosts, setTotalPosts] = useState(0);
 
-  useEffect(() => {
-    fetch(`/blogs?page=${page}&per_page=${perPage}`)
-      .then((response) => response.json())
-      .then((data) => setBlogPosts(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, [page, perPage]);
-
-  useEffect(() => {
-    fetch(`/total_posts`)
-      .then((response) => response.json())
-      .then((data) => setTotalPosts(data.total))
-      .catch((error) => console.error("Error fetching total posts:", error));
-  }, []);
   function readMore(postId) {
     navigate(`/blogs/${postId}`);
   }
