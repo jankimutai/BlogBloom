@@ -21,7 +21,7 @@ class BlogPostResource(Resource):
                     'id': post.id,
                     'title': post.title,
                     'created_at': post.created_at,
-                    "category ": post.category,
+                    "category": post.category,
                     'content': post.content,
                     "image_url":post.image_url
                 }
@@ -60,7 +60,7 @@ class BlogPostResourceById(Resource):
             'id': post.id,
             'title': post.title,
             'created_at': post.created_at,
-            "category ": post.category,
+            "category": post.category,
             'content': post.content,
             "image_url":post.image_url
         }
