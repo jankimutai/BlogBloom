@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Home() {
+function Home({blogPosts,handlePageChange,page,totalPages}) {
   const navigate = useNavigate();
   const [blogPosts, setBlogPosts] = useState([]);
   const [page, setPage] = useState(1);
@@ -21,21 +21,9 @@ function Home() {
       .then((data) => setTotalPosts(data.total))
       .catch((error) => console.error("Error fetching total posts:", error));
   }, []);
-
   function readMore(postId) {
     navigate(`/blogs/${postId}`);
   }
-
-  function handlePageChange(newPage) {
-    setPage(newPage);
-  }
-
-  function handlePerPageChange(newPerPage) {
-    setPerPage(newPerPage);
-  }
-
-  const totalPages = Math.ceil(totalPosts / perPage);
-
   return (
     <>
       <div className="blog-list">

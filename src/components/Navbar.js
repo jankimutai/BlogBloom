@@ -1,8 +1,15 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faInfo, faUserPlus, faSignInAlt, faArrowLeft, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-const Navbar = () => {
+const Navbar = ({ onSearch }) => {
+  const [searchInput, setSearchInput] = useState("");
+
+  const handleSearchInputChange = (event) => {
+    setSearchInput(event.target.value);
+    onSearch(searchInput);
+  };
+
   return (
     <nav className="navbar">
       <div className="left">
@@ -29,6 +36,14 @@ const Navbar = () => {
       </div>
       <div className="right">
           <ul>
+            <li>
+              <input
+                type="text"
+                placeholder="Search by title"
+                value={searchInput}
+                onChange={handleSearchInputChange}
+              />
+            </li>
           <li>
             <Link to="/newblog">
               <FontAwesomeIcon icon={faPlusCircle} /> Add New Blog

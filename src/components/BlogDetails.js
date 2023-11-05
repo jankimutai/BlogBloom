@@ -29,10 +29,12 @@ function BlogDetails() {
     <div className="blog-details-container">
         <div key={selectedBlog.id} className="blog-details" >
         <h2 className="blog-details-title">{selectedBlog.title}</h2>
+
         <div className="blog-details-item">
         {selectedBlog.image_url ? (<img className="blog_image1" src={selectedBlog.image_url} alt={selectedBlog.id} />) : null}
             <div className="blog-details-text">
               <p className="blog-date">{selectedBlog.created_at}</p>
+              <h4>Category: {selectedBlog.category}</h4>
               <p className="blog-content">{selectedBlog.content}</p>
             </div>
         </div>

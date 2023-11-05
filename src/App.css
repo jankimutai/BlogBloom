@@ -223,7 +223,8 @@
 
 .blog-content {
   margin-top: 10px;
-  color: #333
+  color: #333;
+  font-size: 16pt;
 }
 
 .blog_image {
