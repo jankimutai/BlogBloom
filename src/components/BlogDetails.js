@@ -26,17 +26,12 @@ function BlogDetails() {
         }})
   }
   return (
-    <div>
-        <div key={selectedBlog.id} className="blog-item">
-        <h2 className="blog-title">{selectedBlog.title}</h2>
-        <div>
-          
-          <button className="edit-button"onClick={() => navigate(`/blogs/${id}/edit`)}>Edit</button>
-          <button className="delete-button" onClick={handleDelete}>Delete</button>
-        </div>
-        <div className="blog_content1">
-        {selectedBlog.image_url ? (<img className="blog_image" src={selectedBlog.image_url} alt={selectedBlog.id} />) : null}
-            <div className="blog_text1">
+    <div className="blog-details-container">
+        <div key={selectedBlog.id} className="blog-details" >
+        <h2 className="blog-details-title">{selectedBlog.title}</h2>
+        <div className="blog-details-item">
+        {selectedBlog.image_url ? (<img className="blog_image1" src={selectedBlog.image_url} alt={selectedBlog.id} />) : null}
+            <div className="blog-details-text">
               <p className="blog-date">{selectedBlog.created_at}</p>
               <p className="blog-content">{selectedBlog.content}</p>
             </div>

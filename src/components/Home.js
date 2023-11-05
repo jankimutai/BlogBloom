@@ -5,7 +5,7 @@ function Home() {
   const navigate = useNavigate();
   const [blogPosts, setBlogPosts] = useState([]);
   const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(10);
+  const [perPage, setPerPage] = useState(12);
   const [totalPosts, setTotalPosts] = useState(0);
 
   useEffect(() => {
@@ -38,19 +38,14 @@ function Home() {
 
   return (
     <>
-      <div>
-        
-        
-      </div>
       <div className="blog-list">
-        <h1>Blog Posts</h1>
-        <div>
+        <div className="blogs-flex">
           {blogPosts.map((post) => (
             <div key={post.id} className="blog-item">
+              {post.image_url ? (<img className="blog_image" src={post.image_url} alt={post.id} />) : null}
               <h2 className="blog-title">{post.title}</h2>
               <h4>{post.category}</h4>
               <p className="blog-date">{post.created_at}</p>
-              <p className="blog-content">{post.content}</p>
               <button onClick={() => readMore(post.id)}>Read More</button>
             </div>
           ))}

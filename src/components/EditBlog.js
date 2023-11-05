@@ -46,7 +46,7 @@ function EditBlogPost() {
       <h2>Edit Blog Post</h2>
       <form onSubmit={handleFormSubmit}>
         <div>
-          <label htmlFor="title">Title</label>
+          <label htmlFor="title">Title:</label>
           <input
             type="text"
             id="title"
@@ -56,7 +56,7 @@ function EditBlogPost() {
           />
         </div>
         <div>
-          <label htmlFor="category">Category</label>
+          <label htmlFor="category">Category:</label>
           <input
             type="text"
             id="category"
@@ -66,7 +66,7 @@ function EditBlogPost() {
           />
         </div>
         <div>
-          <label htmlFor="content">Content</label>
+          <label htmlFor="content">Content:</label>
           <textarea
             id="content"
             name="content"
@@ -76,7 +76,7 @@ function EditBlogPost() {
           />
         </div>
         <div>
-          <label htmlFor="image_url">Image URL</label>
+          <label htmlFor="image_url">Image URL:</label>
           <input
             type="text"
             id="image_url"
