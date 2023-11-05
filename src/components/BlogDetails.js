@@ -28,7 +28,12 @@ function BlogDetails() {
   return (
     <div>
         <div key={selectedBlog.id} className="blog-item">
-        <h2 className="blog-title">{selectedBlog.title}</h2><h4>Category: {selectedBlog.category}</h4>
+        <h2 className="blog-title">{selectedBlog.title}</h2>
+        <div>
+          
+          <button className="edit-button"onClick={() => navigate(`/blogs/${id}/edit`)}>Edit</button>
+          <button className="delete-button" onClick={handleDelete}>Delete</button>
+        </div>
         <div className="blog_content1">
         {selectedBlog.image_url ? (<img className="blog_image" src={selectedBlog.image_url} alt={selectedBlog.id} />) : null}
             <div className="blog_text1">
