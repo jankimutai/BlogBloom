@@ -42,3 +42,6 @@ class BlogPost(db.Model):
     #relationship
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
 
+
+   
+
