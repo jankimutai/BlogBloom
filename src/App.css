@@ -190,6 +190,7 @@
 .blog-item {
   background-color: #fff;
   border: 1px solid #ccc;
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
   border-radius: 7px;
   padding: 10px;
   width: calc(23.55% - 10px);
