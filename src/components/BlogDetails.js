@@ -29,7 +29,6 @@ function BlogDetails() {
     <div className="blog-details-container">
         <div key={selectedBlog.id} className="blog-details" >
         <h2 className="blog-details-title">{selectedBlog.title}</h2>
-
         <div className="blog-details-item">
         {selectedBlog.image_url ? (<img className="blog_image1" src={selectedBlog.image_url} alt={selectedBlog.id} />) : null}
             <div className="blog-details-text">
