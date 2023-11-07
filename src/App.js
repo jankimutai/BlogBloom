@@ -42,17 +42,7 @@ function App() {
     setSearchQuery(query);
   };
 
-  const filteredPosts = blogPosts.filter((post) =>{
-    if (searchQuery === ""){
-      return true
-    }
-    else{
-      return post.title.toLowerCase().includes(searchQuery.toLowerCase())
-    }
-  }
-
-    
-  );
+  const filteredPosts = searchQuery ? blogPosts.filter((post) => post.title.toLowerCase().includes(searchQuery.toLowerCase())) : blogPosts;
 
   return (
     <>

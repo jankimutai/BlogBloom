@@ -8,7 +8,7 @@ const Login = ({onLogin}) => {
   const [password, setPassword] = useState('');
   function handleSubmit(e){
     e.preventDefault()
-    fetch('https://blogbloom-fullstack.onrender.com/login',{
+    fetch('http://localhost:5555/login',{
       method:"POST",
       headers:{
         "Content-Type":"application/json"

@@ -40,7 +40,7 @@ class BlogPostResource(Resource):
 
         if not title or not content or not category:
             return {'error': 'Title, content, and category are required fields'}, 400
-        blog = BlogPost(title=title,content=content,category=category,image_url=image_url,user_id=randint(1,10))
+        blog = BlogPost(title=title,content=content,category=category,image_url=image_url,user_id=1)
         if blog:
             db.session.add(blog)
             db.session.commit()
