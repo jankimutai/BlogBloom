@@ -37,7 +37,7 @@ with app.app_context():
         "https://img.freepik.com/free-photo/toy-bricks-table_144627-48267.jpg?size=626&ext=jpg"
 
     ]
-    for _ in range(16):
+    for _ in range(24):
         blog = BlogPost(title =fake.sentence(),content=fake.text(),user_id=1,category=choice(category),image_url = choice(image_urls))
         db.session.add(blog)
     db.session.commit()
