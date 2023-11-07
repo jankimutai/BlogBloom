@@ -7,7 +7,7 @@ function BlogDetails() {
   const [selectedBlog, setSelectedBlog] = useState(null);
 
   useEffect(() => {
-    fetch(`/blogs/${id}`)
+    fetch(`http://localhost:5555/blogs/${id}`)
       .then((response) => response.json())
       .then((data) => setSelectedBlog(data));
     }, [id]);
@@ -16,7 +16,7 @@ function BlogDetails() {
     return null;
   }
   const handleDelete = () => {
-    fetch(`/blogs/${id}`, {
+    fetch(`http://localhost:5555/blogs/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
