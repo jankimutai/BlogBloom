@@ -8,7 +8,7 @@ function NewPost(){
 
     function newPostSubmit(e){
       e.preventDefault()
-      fetch('/blogs',{
+      fetch('http://127.0.0.1:5555/blogs',{
         method:"POST",
         headers:{
           "Content-Type":"application/json"

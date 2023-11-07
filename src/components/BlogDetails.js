@@ -16,7 +16,7 @@ function BlogDetails() {
     return null;
   }
   const handleDelete = () => {
-    fetch(`http://localhost:5555/blogs/${id}`, {
+    fetch(`/blogs/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
