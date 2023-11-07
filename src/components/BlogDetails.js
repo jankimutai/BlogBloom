@@ -7,7 +7,7 @@ function BlogDetails() {
   const [selectedBlog, setSelectedBlog] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5555/blogs/${id}`)
+    fetch(`/blogs/${id}`)
       .then((response) => response.json())
       .then((data) => setSelectedBlog(data));
     }, [id]);

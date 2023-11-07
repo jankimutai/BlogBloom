@@ -19,7 +19,7 @@ function EditBlogPost() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://localhost:5555/blogs/${id}`, {
+    fetch(`/blogs/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

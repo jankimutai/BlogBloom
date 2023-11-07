@@ -11,7 +11,7 @@ function Registration(){
   function handleSubmit(e) {
     e.preventDefault();
 
-    fetch('http://localhost:5555/registration', {
+    fetch('/registration', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

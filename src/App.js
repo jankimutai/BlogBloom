@@ -18,7 +18,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:5555/blogs?page=${page}&per_page=${perPage}`)
+    fetch(`/blogs?page=${page}&per_page=${perPage}`)
       .then((response) => response.json())
       .then((data) => setBlogPosts(data))
       .catch((error) => console.error("Error fetching data:", error));
