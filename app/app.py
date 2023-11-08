@@ -1,6 +1,6 @@
 from flask_restful import Resource
 from config import app,api,bcrypt
-from models import db,BlogPost,User
+from app.models import db,BlogPost,User
 from flask import make_response,jsonify,request
 from random import randint
 class Home(Resource):
