@@ -2,7 +2,6 @@ from flask_restful import Resource
 from config import app,api,bcrypt
 from app.models import db,BlogPost,User
 from flask import make_response,jsonify,request
-from random import randint
 class Home(Resource):
    def get(self):
         response = make_response(jsonify({"message":"Welcome to BlogBloom API"}),200)
