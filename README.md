@@ -1,1 +1,1 @@
-postgresql://jankim:LafzBbldb82gC7Y7blL4r2G1ZKzoAzrX@dpg-cl511qc72pts739p3sb0-a.ohio-postgres.render.com/blogbloomdb
+postgresql://jankim:gLph5kVsVpELR1BkhDdxlmdtG8oWzJAZ@dpg-cl5mt0l6fh7c73eqace0-a.oregon-postgres.render.com/blogsdb_odlq
