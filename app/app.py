@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from config import app,api,bcrypt
+from app.config import app,api,bcrypt
 from app.models import db,BlogPost,User
 from flask import make_response,jsonify,request
 class Home(Resource):
