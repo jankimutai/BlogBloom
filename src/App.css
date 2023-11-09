@@ -50,6 +50,19 @@
 .navbar .right {
   margin-right: 20px;
 }
+/* Responsive styles for small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .navbar li {
+    display: block;
+    margin: 10px 0;
+  }
+}
 
 /* Custom CSS for registration form container */
 .registration-form-container {
@@ -234,14 +247,14 @@
   height: 300px; 
   object-fit: cover;
 }
-.blog_image1 {
-  flex: 0 0 auto; 
-  margin-right: 10px;
-  width:400px;
-  height:400px; 
-  object-fit: cover;
-}
 
+@media screen and (max-width: 600px) {
+  .blog_image1 {
+    width: 100%; /* Adjust the width as needed for small screens */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0; /* Remove right margin for better responsiveness */
+  }
+}
 .blog_image:hover {
 
   transform: scale(1.01); 
@@ -250,6 +263,16 @@
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4); 
 
 }
+/* Responsive styles for small screens */
+@media only screen and (max-width: 768px) {
+  .blog-item {
+    width: 100%;
+  }
+}
+
+/* your-external-css-file.css */
+
+/* Existing styles for larger screens */
 .blog-creation-container {
   width: 100%;
   max-width: 400px;
@@ -261,7 +284,7 @@
   background-color: rgba(255, 255, 255, 0.9);
   text-align: center;
   margin-top: 50px;
-  color:#000000
+  color: #000000;
 }
 
 .blog-creation-title {
@@ -275,11 +298,12 @@
 
 .blog-creation-input,
 .blog-creation-textarea {
-  width: 80%;
+  width: 93%; /* Adjust width to full width on small screens */
   padding: 13px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
 .blog-creation-button {
   padding: 10px;
   background-color: #007bff;
@@ -293,6 +317,7 @@
 .blog-creation-button:hover {
   background-color: #0056b3;
 }
+
 
 p{
   margin: 10px 0;
@@ -324,6 +349,9 @@ button.delete-button {
   margin-right: 20px;
 }
 
+/* your-external-css-file.css */
+
+/* Existing styles for larger screens */
 .edit-container {
   width: 80%;
   max-width: 600px;
@@ -334,12 +362,14 @@ button.delete-button {
   border-radius: 5px;
   color: #000000;
 }
+
 .edit-container label {
   font-weight: bold;
   margin-bottom: 10px;
   display: block;
   color: #333;
 }
+
 .edit-container input[type="text"],
 .edit-container textarea {
   width: 96%;
@@ -348,6 +378,7 @@ button.delete-button {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
+
 .edit-container button[type="submit"] {
   background-color: #007BFF;
   color: #fff;
@@ -357,20 +388,40 @@ button.delete-button {
   font-size: 16px;
   cursor: pointer;
 }
+
 .edit-container button[type="submit"]:hover {
   background-color: #0059b3;
 }
 
+/* New styles for small screens */
+@media screen and (max-width: 600px) {
+  .edit-container {
+    width: 100%; /* Adjust width to full width on small screens */
+    padding: 10px; /* Adjust padding for better spacing on small screens */
+  }
+
+  .edit-container input[type="text"],
+  .edit-container textarea {
+    width: 100%; /* Adjust width to full width on small screens */
+  }
+}
+
+
+/* your-external-css-file.css */
+
+/* Existing styles for larger screens */
 .blog-details-info {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+
 .blog-details-text {
   flex: 1;
   margin-left: 20px;
   text-align: left;
 }
+
 .blog-details-item {
   background-color: #fff;
   border: 1px solid #ccc;
@@ -379,16 +430,50 @@ button.delete-button {
   margin-bottom: 15px;
   color: black;
   display: flex;
+  flex-direction: column; /* Adjust for better stacking on small screens */
   justify-content: center;
   align-items: center;
 }
+
 .blog-details-container {
   display: flex;
+  flex-direction: column; /* Adjust for better stacking on small screens */
   background-color: #fff;
   border: 1px solid #ccc;
   justify-content: center;
   align-items: center;
   color: black;
+}
+
+.blog_image1 {
+  flex: 0 0 auto;
+  margin-right: 10px;
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* New styles for small screens */
+@media screen and (max-width: 600px) {
+  .blog-details-info {
+    flex-direction: column; /* Stack items vertically on small screens */
+    align-items: flex-start; /* Adjust alignment for better readability */
+  }
+
+  .blog-details-text {
+    margin-left: 0; /* Remove left margin for better spacing on small screens */
+    margin-top: 10px; /* Add top margin for better spacing on small screens */
+  }
+
+  .blog-details-item {
+    width: 100%; /* Adjust width to full width on small screens */
+  }
+
+  .blog_image1 {
+    width: 100%; /* Adjust width to full width on small screens */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 0; /* Remove right margin for better responsiveness */
+  }
 }
 
 .about-container {
