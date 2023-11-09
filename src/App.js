@@ -18,14 +18,14 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    fetch(`/blogs?page=${page}&per_page=${perPage}`)
+    fetch(`https://blogbloom-fullstack.onrender.com/blogs?page=${page}&per_page=${perPage}`)
       .then((response) => response.json())
       .then((data) => setBlogPosts(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, [page, perPage]);
 
   useEffect(() => {
-    fetch(`http://localhost:5555/total_posts`)
+    fetch(`https://blogbloom-fullstack.onrender.com/total_posts`)
       .then((response) => response.json())
       .then((data) => setTotalPosts(data.total))
       .catch((error) => console.error("Error fetching total posts:", error));

@@ -12,14 +12,14 @@ function EditBlogPost() {
   });
 
   useEffect(() => {
-    fetch(`/blogs/${id}`)
+    fetch(`https://blogbloom-fullstack.onrender.com/blogs/${id}`)
       .then((response) => response.json())
       .then((data) => setFormData(data));
   }, [id]);
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    fetch(`/blogs/${id}`, {
+    fetch(`https://blogbloom-fullstack.onrender.com/blogs/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
