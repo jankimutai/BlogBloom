@@ -1,1 +1,1 @@
-postgresql://jankim:gLph5kVsVpELR1BkhDdxlmdtG8oWzJAZ@dpg-cl5mt0l6fh7c73eqace0-a.oregon-postgres.render.com/blogsdb_odlq
+
